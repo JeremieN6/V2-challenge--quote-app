@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+:root{
+    --bg-color: #111729;
+    --main-color: #FFF;
+    --bg-container-quote: #20293A;
+    --sentence-color: #97A3B6;
+    --category-quote-color: #6466E9;
+    --control-border-color: #4A5567;
+
+    --title-size: 1rem;
+    --small-texte-size: 0.625rem;
+}
+body{
+    background-color: var(--bg-color);
+    color: var(--main-color);
+    font-family: "Outfit", sans-serif;
+}
+.container-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 97vh;
+}
+.container-quote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    background-color: var(--bg-container-quote);
+    padding: 2.5em 0em;
+    border-radius: 10px;
+    position: relative;
+    z-index: 10;
+}
+.img-quote-background{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+}
+.container-quote-row-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.content-title.content-author {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: var(--title-size);
+}
+.content-category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid var(--category-quote-color);
+    color: var(--category-quote-color);
+    border-radius: 20px;
+    padding: 0px 10px 2px;
+    font-weight: 500;
+    font-size: var(--small-texte-size);
+}
+.container-sentense {
+    display: flex;
+    justify-content: center;
+      position: relative;
+    z-index: 10;
+}
+.content-sentense {
+    width: 80%;
+    text-align: center;
+}
+span.sentense {
+    color: var(--sentence-color);
+    font-size: 1.5rem;
+}
+.container-control {
+    margin-top: 15px;
+}
+.content-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.other-quote, .copy-quote {
+    border: 1px solid var(--control-border-color);
+    padding: 5px;
+}
+.other-quote {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-right: 0;
+    
+}
+.copy-quote {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: help;
+}
+
+.copy-quote:hover:after,
+.copy-quote:focus:after {
+  content: attr(aria-label);  /* on affiche aria-label */
+  position: absolute;
+  top: -2.4em;
+  left: 50%;
+	transform: translateX(-50%); /* on centre horizontalement  */
+  z-index: 1; /* pour s'afficher au dessus des éléments en position relative */
+  white-space: nowrap;  /* on interdit le retour à la ligne*/
+  padding: 5px 14px;
+  background: #413219;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 1.2rem;
+}
+
+[aria-label]:hover:before,
+[aria-label]:focus:before {
+  content: "▼";
+  position: absolute;
+  top: -1em;
+	left: 50%;
+	transform: translateX(-50%); /* on centre horizontalement  */
+  font-size: 20px;
+  color: #413219;
+}
+
+/* pas de contour durant le :focus */
+[aria-label]:focus {
+  outline: none;
+}
