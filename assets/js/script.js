@@ -75,7 +75,7 @@ fetch('https://api.quotable.io/random')
 
           // Optional: Display a message to indicate that the copy has been made
           swal({
-            title: "Copied!",
+            title: "Copied! ✅",
             text: "Quote successfully copied to clipboard. 🫡",
             type: "success",
             timer: 2500,
